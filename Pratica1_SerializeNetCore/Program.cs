@@ -26,7 +26,8 @@ namespace Pratica1_SerializeNetCore{
             new Onibus{ ID = 500, Empresa = "ViaAgil", Destino = "Trabalho", VelMax=110.5},
             new Onibus{ ID = 240, Empresa = "ViaAgil", Destino = "CKP ", VelMax = 70.2}
         };
-   
+
+        
             var jsonVariosBus = JsonConvert.SerializeObject(variosOnibus);
         
             return jsonVariosBus;
@@ -35,10 +36,10 @@ namespace Pratica1_SerializeNetCore{
         // Deserialize a string Json, para um array de objetos do tipo Onibus. 
         public static void DoDeserialization(string jsonVariosBus) {
     
-            var severalBus = JsonConvert.DeserializeObject<Onibus[]>(jsonVariosBus);
+            var variasVans = JsonConvert.DeserializeObject<Van[]>(jsonVariosBus);
     
-                foreach (var onibusEncontrado in severalBus) {
-                    System.Console.WriteLine($"ID:{onibusEncontrado.ID} Empresa:{onibusEncontrado.Empresa} Destino:{onibusEncontrado.Destino} VelMax:{onibusEncontrado.VelMax}");
+                foreach (var van in variasVans) {
+                    System.Console.WriteLine($"Destino:{van.Destino} Velocidade Máxima:{van.VelMax}");
                  }
             
             }
